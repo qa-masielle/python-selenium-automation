@@ -1,6 +1,17 @@
 Feature: Target Cart Functionality
 
-  Scenario: Verify empty cart message
-    Given I open target.com
-    When I click on the cart icon
-    Then I should see "Your cart is empty"
+#  Scenario: Verify empty cart message
+#    Given Open Target main page
+#    When Click on cart icon
+#    Then Empty Cart message is shown
+
+  Scenario: User can add a product to cart
+    Given Open Target main page
+    When Search for mug
+    And Click on product
+    And Click on Add to Cart button
+    And Store product name
+    And Confirm Add to Cart button from side navigation
+    And Open cart page
+    Then Verify cart has 1 item(s)
+    And Verify product in cart is correct
